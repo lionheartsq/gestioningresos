@@ -1,0 +1,205 @@
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="description" content="Fundación Jesús es mi roca"/>
+		<meta name="keywords" content="Fundación Jesús es mi roca"/>
+		<meta name="author" content="Softclass"/>
+		<link rel="shortcut icon" href="images/favicon.ico">
+		<!-- 
+		<script
+			  src="https://code.jquery.com/jquery-2.2.4.js"
+			  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+			  crossorigin="anonymous"></script>		
+	     -->
+		<script src="js/jquery-2.2.4.js"></script>
+		<script src="js/bootstrap.js" type="application/javascript"></script>	
+		<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+		<script src="js/jquery.dataTables.min.js"></script>
+        <script src="js/jquery-ui.js"></script>
+		<script src="js/jquery.ui.autocomplete.scroll.min.js"></script>	
+		<link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/jquery-ui.css" rel="stylesheet">
+		<link href="css/jquery.dataTables.css" rel="stylesheet">		
+
+<script>
+ $(document).ready( function () {
+     $('#tabla').DataTable({
+      "language":{
+       "lengthMenu":"Mostrar _MENU_ registros por página.",
+       "zeroRecords": "Lo sentimos. No se encontraron registros.",
+             "info": "Mostrando página _PAGE_ de _PAGES_",
+             "infoEmpty": "No hay registros aún.",
+             "infoFiltered": "(filtrados de un total de _MAX_ registros)",
+             "search" : "Búsqueda",
+             "LoadingRecords": "Cargando ...",
+             "Processing": "Procesando...",
+             "SearchPlaceholder": "Comience a teclear...",
+             "paginate": {
+     "previous": "Anterior",
+     "next": "Siguiente", 
+     }
+      }
+     });
+ } );
+</script>	
+
+<title>Gestión de ingresos</title>
+	</head>
+<style>
+html,body
+{
+    background-color:#941524;
+	padding: 0 0 40px;
+    margin: 0;
+}
+/*----------------------------------------------------------*/
+.footer
+{
+    width: 100%;
+    bottom: 0;
+    position:fixed;
+    height: 40px;
+	background-color:#9e8d6f;
+	color:white;
+}
+.footer p{
+	color:white;
+	padding: 10px;
+}
+.footer img{
+	width:2%;
+}
+.navbar-brand {
+  padding: 0px;
+}
+.navbar-brand>img {
+  height: 100%;
+  padding: 7px;
+  width: auto;
+}
+.navbar-inverse{
+	background-color:#9e8d6f;
+	border:none;
+	border-radius:0px;
+}
+.navbar-inverse .nav li a{
+  color: white;
+}
+.navbar-inverse .nav li a:hover{
+  color: white;
+  -moz-box-shadow: 0px 0px 30px #ffffff; 
+  -webkit-box-shadow: 0px 0px 30px #ffffff; 
+  box-shadow: 0px 0px 30px #ffffff;
+}
+.dropdown-menu{
+	background-color:#9e8d6f;
+	border:none;
+	border-radius:0px;
+}
+.dropdown-menu li a:hover{
+	background-color:#9e8d6f;
+	border:none;
+	border-radius:0px;
+}
+.navbar .nav > .active > a, .navbar .nav > .active > a:hover, .navbar .nav > .active > a:focus{
+    background-color: #ac0b1a !important;
+}
+.container{
+	margin:70px 0px 0px 0px;
+	width:100%;
+}
+</style>
+<body onLoad="if ('Navigator' == navigator.appName)
+document.forms[0].reset();">
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span> 
+			<span class="icon-bar"></span> 
+            <span class="icon-bar"></span> 
+			<span class="icon-bar"></span> 
+			<span class="icon-bar"></span> 			
+     </button>
+      <a class="navbar-brand" href="" target="blank"><img src="images/logob.png" alt="fundacion"></a>
+    </div>
+	<div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="index.php">Inicio</a></li> 
+	  
+ 	  <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Tienda
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="movimientos.php"><span class="glyphicon glyphicon-plus"></span> Cargar saldo</a></li>
+          <li><a href="listadotienda.php" target="blank"><span class="glyphicon glyphicon-plus"></span> Saldos por residente</a></li> 
+		  <li><a href="product.php" target="blank"><span class="glyphicon glyphicon-plus"></span> Crear producto</a></li>	
+		  <!--
+          <li><a href="javascript:window.open('product.php','',
+		  'width=1600,height=700,left=0,top=0,toolbar=no');void 0"><span class="glyphicon glyphicon-plus"></span> Crear producto</a></li>	
+		  -->
+          <li><a href="elproductos.php"><span class="glyphicon glyphicon-plus"></span> Editar producto</a></li>	
+          <li><a href="reactivarproductos.php"><span class="glyphicon glyphicon-plus"></span> Reactivar producto</a></li>	
+		</ul>
+      </li>
+ 	  <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Pagos
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="pagos.php"><span class="glyphicon glyphicon-plus"></span> Nuevo pago</a></li>
+          <li><a href="proveedor.php"><span class="glyphicon glyphicon-plus"></span> Crear proveedor</a></li>
+          <li><a href="elproveedores.php"><span class="glyphicon glyphicon-plus"></span> Eliminar proveedor</a></li>
+		</ul>
+      </li>	
+ 	  <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Resúmenes
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="resumen.php"><span class="glyphicon glyphicon-plus"></span> Resumen en linea</a></li>
+          <li><a href="inventariotienda.php"><span class="glyphicon glyphicon-plus"></span> Inventarios</a></li>		  
+          <li><a href="resumenp.php"><span class="glyphicon glyphicon-plus"></span> Resumen pagos</a></li>		
+			<li><a href="detallefrapr.php"><span class="glyphicon glyphicon-plus"></span> Ventas vs Compras</a></li>				  
+        </ul>
+      </li>	
+ 	  <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Movimientos
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="pedidos.php"><span class="glyphicon glyphicon-plus"></span> Ingresar pedidos</a></li> 		
+			<li><a href="colpatria.php"><span class="glyphicon glyphicon-plus"></span> Colpatria</a></li>
+          <li><a href="bancolombia.php"><span class="glyphicon glyphicon-plus"></span> Bancolombia</a></li>			  
+			<li><a href="efectivo.php"><span class="glyphicon glyphicon-plus"></span> Efectivo</a></li>        
+		  </ul>
+      </li>
+ 	  <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Detalles
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="resumenfra.php"><span class="glyphicon glyphicon-plus"></span> Detallados por filtro</a></li>
+          <li><a href="detallefracl.php"><span class="glyphicon glyphicon-plus"></span> Detallados por cliente</a></li>		  
+          <li><a href="detallefechafra.php"><span class="glyphicon glyphicon-plus"></span> Detallados por fecha</a></li>			  
+        </ul>
+      </li>	 
+ 	  <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Edicion
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="editarfactura.php"><span class="glyphicon glyphicon-plus"></span> Editar facturas</a></li>
+          <li><a href="editarpedido.php"><span class="glyphicon glyphicon-plus"></span> Editar pedidos</a></li>			  
+        </ul>
+      </li>	
+ 	  <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Códigos
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+		  <li><a href="productos.php"  target="blank"><span class="glyphicon glyphicon-plus"></span> Barras productos</a></li>
+		  <li><a href="residentes.php"  target="blank"><span class="glyphicon glyphicon-plus"></span> Barras residentes</a></li>
+			<li><a href="../ingreso/carnets/index.php" target="blank"><span class="glyphicon glyphicon-plus"></span> Imprimir carnets</a></li>		  
+        </ul>
+      </li>		  
+     </ul>
+</div>	
+  </div>
+</nav>

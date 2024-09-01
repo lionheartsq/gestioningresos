@@ -1,0 +1,38 @@
+  <script type="text/javascript">
+$(function() {
+            $("#codp").autocomplete({
+			maxShowItems: 5,
+                source: "itemsp.php",
+                minLength: 1,
+                select: function(event, ui) {
+					event.preventDefault();
+                    $('#codp').val(ui.item.codp);
+					$('#comercialp').val(ui.item.comercialp);
+					$('#detallep').val(ui.item.detallep);
+					$('#unidades').val(ui.item.unidades);
+					$('#preciop').val(ui.item.preciop);
+					$('#porcentajep').val(ui.item.impuestop);
+					$('#idproductos').val(ui.item.idproductos);
+			     }
+            });
+		});
+</script>		<!-- boots -->	
+
+  <script type="text/javascript">
+$(function() {
+            $("#detallep").autocomplete({
+			maxShowItems: 5,
+                source: "itemsp1.php",
+                minLength: 1,
+                select: function(event, ui) {
+					event.preventDefault();
+                    $('#nump').val(ui.item.codp);
+					$('#comercialp').val(ui.item.comercialp);
+					$('#detallep').val(ui.item.detallep);
+					$('#unidades').val(ui.item.unidades);
+					$('#preciop').val(ui.item.preciop);
+					$('#porcentajep').val(ui.item.impuestop);
+					$('#idproductos').val(ui.item.idproductos);			     }
+            });
+		});
+</script>		<!-- boots -->	
